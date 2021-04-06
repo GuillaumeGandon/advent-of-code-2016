@@ -7,7 +7,7 @@ def count_possible_triangles(triangles):
 
 
 row_triangles = tuple(
-    tuple(int(value) for value in row.split())
+    tuple(map(int, row.split()))
     for row in open('input').read().splitlines()
 )
 
