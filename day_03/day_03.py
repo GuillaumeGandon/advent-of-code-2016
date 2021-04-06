@@ -1,11 +1,8 @@
-from itertools import combinations
-
-
 def count_possible_triangles(triangles):
     return sum(
         1
         for t in triangles
-        if all(sum(x) > y for x, y in zip(combinations(t, 2), t[::-1]))
+        if sum(sorted(t)[:2]) > max(t)
     )
 
 
