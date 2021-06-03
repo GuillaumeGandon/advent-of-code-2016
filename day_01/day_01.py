@@ -1,12 +1,9 @@
-TURNS = {'R': -1j, 'L': 1j}
-instructions = tuple(
-    (inst[0], int(inst[1:]))
-    for inst in open('input').read().strip().split(', ')
-)
+TURNS = {"R": -1j, "L": 1j}
+instructions = tuple((inst[0], int(inst[1:])) for inst in open("input").read().strip().split(", "))
 
 position, direction = (0 + 0j), (0 + 1j)
 visited_locations = set()
-first_twice_location = None
+first_twice_location = 0 + 0j
 for turn, dist in instructions:
     direction *= TURNS[turn]
     for _ in range(dist):
